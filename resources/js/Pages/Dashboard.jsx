@@ -1,6 +1,5 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
-import { Head, Link } from '@inertiajs/react';
-
+import { Head } from '@inertiajs/react';
 
 export default function Dashboard() {
     return (
@@ -20,7 +19,6 @@ export default function Dashboard() {
                             You're logged in!
                         </div>
                     </div>
-                    <Link href={route('statuses.index')}>View Statuses</Link>
                 </div>
             </div>
         </AuthenticatedLayout>

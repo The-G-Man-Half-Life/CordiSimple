@@ -2,40 +2,77 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\StatusResource;
 use App\Models\Status;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Validator;
 
 class StatusController extends Controller
 {
-    public function index() //get all
+    public function index()
+{
+    $statuses = Status::all(); 
+    return Inertia::render('Statuses/Index', [
+        'statuses' => StatusResource::collection($statuses), // Asegúrate de que esto devuelve un array.
+    ]);
+}
+
+
+
+    public function create()
     {
-        $statuses = Status::all();
-        return Inertia::render('StatusesIndex', [
-            'statuses' => $statuses,
+        return Inertia::render('Statuses/Create');
+    }
+
+    public function store(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        $status = Status::create($request->all());
+
+        return redirect()->route('statuses.index')->with('success', 'Status created successfully.');
+    }
+
+    public function show(Status $status)
+    {
+        return Inertia::render('Statuses/Show', [
+            'status' => new StatusResource($status), // Usando el recurso
         ]);
     }
 
-    public function create() // create
+    public function edit(Status $status)
     {
+        return Inertia::render('Statuses/Edit', [
+            'status' => new StatusResource($status), // Usando el recurso
+        ]);
     }
 
-    public function store(Request $request) //metodo create con validaciones
+    public function update(Request $request, Status $status)
     {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        $status->update($request->all());
+
+        return redirect()->route('statuses.index')->with('success', 'Status updated successfully.');
     }
 
-    public function show(Status $status) // get by id
+    public function destroy(Status $status)
     {
-    }
+        $status->delete();
 
-    public function edit(Status $status) // edit con validaciones
-    {
-    }
-    public function update(Request $request, Status $status) // edit pero sin validaciones
-    {
-    }
-
-    public function destroy(Status $status) // metodo delete
-    {
+        return redirect()->route('statuses.index')->with('success', 'Status deleted successfully.');
     }
 }
