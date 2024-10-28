@@ -8,7 +8,7 @@ use Inertia\Inertia;
 
 class StatusController extends Controller
 {
-    public function index()
+    public function index() //get all
     {
         $statuses = Status::all();
         return Inertia::render('StatusesIndex', [
@@ -16,26 +16,26 @@ class StatusController extends Controller
         ]);
     }
 
-    public function create()
+    public function create() // create
     {
     }
 
-    public function store(Request $request)
+    public function store(Request $request) //metodo create con validaciones
     {
     }
 
-    public function show(Status $status)
+    public function show(Status $status) // get by id
     {
     }
 
-    public function edit(Status $status)
+    public function edit(Status $status) // edit con validaciones
     {
     }
-    public function update(Request $request, Status $status)
+    public function update(Request $request, Status $status) // edit pero sin validaciones
     {
     }
 
-    public function destroy(Status $status)
+    public function destroy(Status $status) // metodo delete
     {
     }
 }
