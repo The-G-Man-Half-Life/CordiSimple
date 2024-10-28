@@ -11,14 +11,12 @@ use Illuminate\Support\Facades\Validator;
 class StatusController extends Controller
 {
     public function index()
-{
-    $statuses = Status::all(); 
-    return Inertia::render('Statuses/Index', [
-        'statuses' => StatusResource::collection($statuses), // Asegúrate de que esto devuelve un array.
-    ]);
-}
-
-
+    {
+        $statuses = Status::all();
+        return Inertia::render('Statuses/Index', [
+            'statuses' => StatusResource::collection($statuses), 
+        ]);
+    }
 
     public function create()
     {
