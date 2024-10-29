@@ -14,9 +14,9 @@ class EventController extends Controller
      */
     public function index()
     {
-        $event = event::all();
-        return Inertia::render('Event/Index', [
-            'event' => EventResource::collection($event), 
+        $events = event::all();
+        return Inertia::render('Events/Index', [
+            'events' => EventResource::collection($events), 
         ]);
     }
 
