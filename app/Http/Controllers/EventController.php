@@ -91,7 +91,8 @@ class EventController extends Controller
         }
 
         $event->update($request->all());
-        return redirect()->route('events.index')->with('success', 'Event updated successfully.');    }
+        return redirect()->route('events.Index')->with('success', 'Event updated successfully.');    
+    }
 
     /**
      * Remove the specified resource from storage.
