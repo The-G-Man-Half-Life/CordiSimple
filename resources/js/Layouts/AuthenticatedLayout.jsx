@@ -30,8 +30,16 @@ export default function AuthenticatedLayout({ header, children }) {
                                 >
                                     Dashboard
                                 </NavLink>
+                                <NavLink
+                                    href={route('statuses.index')}
+                                    active={route().current('statuses.index')}
+                                >
+                                    Statuses
+                                </NavLink>
                             </div>
                         </div>
+                        
+
 
                         <div className="hidden sm:ms-6 sm:flex sm:items-center">
                             <div className="relative ms-3">
