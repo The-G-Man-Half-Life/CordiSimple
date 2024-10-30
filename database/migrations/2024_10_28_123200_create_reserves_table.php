@@ -11,14 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('reserves', function (Blueprint $table) {
-            $table->id();
-            $table -> dateTime("createdAt");
-            $table -> dateTime("modifiedAt");
-            $table -> integer("userId");
-            $table ->integer("eventId");
-            $table ->integer("statusId");
+        Schema::create('reserves', function (Blueprint $table) { $table->id();
+            $table -> unsignedInteger("userId");
+            $table ->unsignedInteger("eventId");
+            $table ->unsignedInteger("statusId");
             $table->timestamps();
+
+
         });
     }
 

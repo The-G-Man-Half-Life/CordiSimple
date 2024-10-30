@@ -18,8 +18,6 @@ class Reserve extends Model
     // protected $guarded = [];
 
     protected $fillable = [
-        'CreateAt',
-        "ModifiedAt",
         "UserId",
         "EventId",
         "StatusId",
