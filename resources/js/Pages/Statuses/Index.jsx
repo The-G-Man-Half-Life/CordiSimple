@@ -1,19 +1,23 @@
 import React from 'react'
 import { Link } from '@inertiajs/react'
-import { PlusCircle } from 'lucide-react'
+import { ArrowLeft } from 'lucide-react'
 import Header from '@/Layouts/Header'
+import Footer from '@/Layouts/Footer'
 
 export default function Index({ statuses }) {
     const statusList = statuses.data
 
     return (
-        <div>
+        <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
             <Header />
-            <div className="py-12 mt-16"> {/* Ajusta el margin superior */}
+            <div className="py-12 mt-16"> 
                 <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
                     <div className="overflow-hidden bg-white shadow-sm sm:rounded-lg">
-                        <div className="p-6 text-gray-900">
+                        <div className="p-6 text-gray-900 ">
                             <div className="mb-6 flex items-center justify-between">
+                                <Link href={route('dashboard')} className="text-rose-600 hover:text-rose-800 transition-colors">
+                                    <ArrowLeft className="h-6 w-6" />
+                                </Link>
                                 <h3 className="text-2xl font-bold">Status List</h3>
                             </div>
                             <div className="overflow-x-auto">
@@ -49,6 +53,7 @@ export default function Index({ statuses }) {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     )
 }
