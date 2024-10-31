@@ -13,7 +13,7 @@ const Index = ({ events }) => {
                     'Accept': 'application/json',
                 },
             });
-            Inertia.visit('/events');
+            window.location.href = route('events.index');
         }
     };
 

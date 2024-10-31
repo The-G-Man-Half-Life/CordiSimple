@@ -1,4 +1,6 @@
 import React from 'react';
+import { Inertia } from '@inertiajs/inertia';
+import { Link } from '@inertiajs/react'
 
 const Show = ({ event }) => {
     const eventData = event.data;
@@ -11,7 +13,11 @@ const Show = ({ event }) => {
                 <p><strong>Date:</strong> {eventData.date}</p>
                 <p><strong>Ubication:</strong> {eventData.ubication}</p>
                 <p><strong>Capacity:</strong> {eventData.capacity}</p>
-                <p><strong>Status ID:</strong> {eventData.status_id}</p>
+                <p className='mb-3'><strong>Status ID:</strong> {eventData.status_id}</p>
+
+                <Link href={route('events.index')} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded">
+                    Go back
+                </Link>
             </article>
         </section>
     );

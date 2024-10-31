@@ -33,8 +33,6 @@ const Index = ({ statuses }) => {
     </article>
 </section>
 
-
-
     );
 };
 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Inertia } from '@inertiajs/inertia';
 
+
 const Create = () => {
     const [formData, setFormData] = useState({
         name: '',
@@ -18,6 +19,7 @@ const Create = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         Inertia.post('/events', formData);
+        window.location.href = route('events.index');
     };
 
     return (

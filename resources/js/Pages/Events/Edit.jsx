@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Inertia } from '@inertiajs/inertia';
+import { Link } from '@inertiajs/react'
 
 const Edit = ({ event }) => {
     const [formData, setFormData] = useState(event.data);
@@ -13,8 +14,9 @@ const Edit = ({ event }) => {
         await Inertia.put(`/events/${event.data.id}`, formData);
 
         alert("Event updated successfully!");
-        Inertia.visit('/events');
+        window.location.href = route('events.index');
     };
+
 
     return (
         <section className="flex justify-center items-center pt-8">
@@ -96,9 +98,8 @@ const Edit = ({ event }) => {
                         <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                             Update
                         </button>
-
-
                     </div>
+
                 </form>
             </article>
         </section>
