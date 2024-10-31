@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\EventResource;
 use App\Models\Event;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Validator;
@@ -40,7 +41,7 @@ class EventController extends Controller
             'date' => 'required|date',
             'ubication' => 'required|string',
             'capacity' => 'required|integer',
-            'status_id' => 'nullable|exists:statuses,id', // Asegúrate de que 'statuses' existe
+            'status_id' => 'nullable|exists:statuses,id',
         ]);
 
         if ($validator->fails()) {
@@ -65,12 +66,16 @@ class EventController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
+
     public function edit(Event $event)
     {
+        $event->date = Carbon::parse($event->date)->format('Y-m-d');
+    
         return Inertia::render('Events/Edit', [
             'event' => new EventResource($event),
         ]);
     }
+    
 
     /**
      * Update the specified resource in storage.

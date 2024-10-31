@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Inertia } from '@inertiajs/inertia';
+import { Link } from '@inertiajs/react'
 
 
 const Create = () => {
@@ -34,7 +35,10 @@ const Create = () => {
                     <input type="text" name="ubication" placeholder="Ubication" onChange={handleChange} className="border p-2 mb-2" />
                     <input type="number" name="capacity" placeholder="Capacity" onChange={handleChange} className="border p-2 mb-2" />
                     <input type="number" name="status_id" placeholder="Status ID" onChange={handleChange} className="border p-2 mb-2" />
-                    <button type="submit" className="bg-blue-500 text-white p-2">Create</button>
+                    <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white p-2 rounded">Create</button>
+                    <Link href={route('events.index')} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 ml-2 rounded ">
+                            Cancel
+                    </Link>
                 </form>
             </article>
         </section>

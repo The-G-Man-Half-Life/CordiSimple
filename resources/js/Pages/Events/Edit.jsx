@@ -3,7 +3,7 @@ import { Inertia } from '@inertiajs/inertia';
 import { Link } from '@inertiajs/react'
 
 const Edit = ({ event }) => {
-    const [formData, setFormData] = useState(event.data);
+    const [formData, setFormData] = useState(event.data); // Ya contiene la fecha formateada correctamente
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -14,9 +14,8 @@ const Edit = ({ event }) => {
         await Inertia.put(`/events/${event.data.id}`, formData);
 
         alert("Event updated successfully!");
-        window.location.href = route('events.index');
+        window.location.href = route('events.index'); // Redirige después de la actualización
     };
-
 
     return (
         <section className="flex justify-center items-center pt-8">
@@ -51,7 +50,7 @@ const Edit = ({ event }) => {
                         <input
                             type="date"
                             name="date"
-                            value={formData.date.split('T')[0]}
+                            value={formData.date} // Usa el valor directamente, ya está en formato correcto
                             onChange={handleChange}
                             className="border border-gray-300 rounded w-full py-2 px-3"
                             required
@@ -98,8 +97,10 @@ const Edit = ({ event }) => {
                         <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                             Update
                         </button>
+                        <Link href={route('events.index')} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                            Cancel
+                        </Link>
                     </div>
-
                 </form>
             </article>
         </section>
