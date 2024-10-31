@@ -15,10 +15,28 @@ return new class extends Migration
             $table->id();
             $table -> dateTime("createdAt");
             $table -> dateTime("modifiedAt");
-            $table -> integer("userId");
-            $table ->integer("eventId");
-            $table ->integer("statusId");
+            $table ->unsignedBigInteger("event_Id")->nullable();
+            $table ->unsignedBigInteger("status_Id")->nullable();
+            //$table -> integer("userId");
             $table->timestamps();
+
+            $table->foreign('event_Id')
+                ->references('id')
+                ->on('events')
+                ->onDelete('set null')
+                ->onUpdate('cascade');
+
+            $table -> foreign ('status_Id')
+                ->references('id')
+                ->on('statuses')
+                ->onDelete('set null')
+                ->onUpdate('cascade');
+
+            $table -> foreign ('user_Id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('set null')
+                ->onUpdate('cascade');
         });
     }
 
