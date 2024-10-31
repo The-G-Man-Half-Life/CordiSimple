@@ -55,5 +55,6 @@ export default function Index({ statuses }) {
             </div>
             <Footer />
         </div>
-    )
-}
+    );
+};
+
