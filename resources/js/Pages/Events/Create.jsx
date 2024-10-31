@@ -16,10 +16,11 @@ const Create = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit =async (e) => {
         e.preventDefault();
-        Inertia.post('/events', formData);
-        window.location.href = route('events.index');
+        await Inertia.post('/events', formData);
+        alert("created sucesfully")
+        window.location.href = route("events.index")
     };
 
     return (
