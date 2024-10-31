@@ -1,39 +1,60 @@
-import React from 'react';
+import React from 'react'
+import { Link } from '@inertiajs/react'
+import { ArrowLeft } from 'lucide-react'
+import Header from '@/Layouts/Header'
+import Footer from '@/Layouts/Footer'
 
-const Index = ({ statuses }) => {
-    console.log(statuses.data)
+export default function Index({ statuses }) {
     const statusList = statuses.data
-    return (
-        <section className="flex justify-center items-center pt-8">
-    <article className="text-center">
-        <h1 className="text-2xl font-bold mb-4">Status List</h1>
-        <div className="overflow-x-auto">
-            <table className="min-w-full bg-white border border-gray-200 rounded-lg shadow-md">
-                <thead className="bg-gray-200">
-                    <tr>
-                        <th className="py-2 px-4 border-b border-gray-200 text-left text-gray-600 font-semibold">Name</th>
-                        <th className="py-2 px-4 border-b border-gray-200 text-left text-gray-600 font-semibold">Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {Array.isArray(statusList) && statusList.map(status => (
-                        <tr key={status.id} className="hover:bg-gray-100 transition-colors">
-                            <td className="py-2 px-4 border-b border-gray-200">{status.name}</td>
-                            <td className="py-2 px-4 border-b border-gray-200">{status.description}</td>
-                        </tr>
-                    ))}
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td colSpan="2" className="py-2 text-gray-600 text-sm">Total: {statusList.length} statuses</td>
-                    </tr>
-                </tfoot>
-            </table>
-        </div>
-    </article>
-</section>
 
+    return (
+        <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
+            <Header />
+            <div className="py-12 mt-16"> 
+                <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
+                    <div className="overflow-hidden bg-white shadow-sm sm:rounded-lg">
+                        <div className="p-6 text-gray-900 ">
+                            <div className="mb-6 flex items-center justify-between">
+                                <Link href={route('dashboard')} className="text-rose-600 hover:text-rose-800 transition-colors">
+                                    <ArrowLeft className="h-6 w-6" />
+                                </Link>
+                                <h3 className="text-2xl font-bold">Status List</h3>
+                            </div>
+                            <div className="overflow-x-auto">
+                                <table className="min-w-full divide-y divide-gray-200">
+                                    <thead className="bg-gray-50">
+                                        <tr>
+                                            <th scope="col" className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">
+                                                ID
+                                            </th>
+                                            <th scope="col" className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">
+                                                Name
+                                            </th>
+                                            <th scope="col" className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">
+                                                Description
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody className="divide-y divide-gray-200 bg-white">
+                                        {Array.isArray(statusList) && statusList.map((status) => (
+                                            <tr key={status.id}>
+                                                <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-900">{status.id}</td>
+                                                <td className="whitespace-nowrap px-6 py-4 text-sm text-gray-500">{status.name}</td>
+                                                <td className="px-6 py-4 text-sm text-gray-500">{status.description}</td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div className="mt-4 text-center text-sm text-gray-500">
+                                Total: {statusList.length} statuses
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <Footer />
+        </div>
     );
 };
 
-export default Index;
