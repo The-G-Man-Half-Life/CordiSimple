@@ -25,7 +25,7 @@ class ReserveController extends Controller
      */
     public function create()
     {
-        return Inertia::render('Reserves/Create'); // Asegúrate de tener la vista "Create"
+        return Inertia::render('Reserves/Create'); 
     }
 
     /**
