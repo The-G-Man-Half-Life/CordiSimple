@@ -1,4 +1,5 @@
 import { Head, Link } from '@inertiajs/react';
+import Footer from '@/Layouts/Footer'
 
 export default function Welcome({ auth, laravelVersion, phpVersion }) {
     const handleImageError = () => {
@@ -355,6 +356,9 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                         </footer>
                     </div>
                 </div>
+
+                <Footer />
+
             </div>
         </>
     );
