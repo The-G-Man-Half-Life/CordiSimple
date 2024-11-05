@@ -37,10 +37,16 @@ export default function AuthenticatedLayout({ header, children }) {
                                     Statuses
                                 </NavLink>
                                 <NavLink
-                                    href={route('Rerseves.index')}
-                                    active={route().current('Rerseves.index')}
+                                    href={route('reserves.index')}
+                                    active={route().current('reserves.index')}
                                 >
                                     reservs
+                                </NavLink>
+                                                                <NavLink
+                                    href={route('events.index')}
+                                    active={route().current('events.index')}
+                                >
+                                    Events
                                 </NavLink>
                             </div>
                         </div>

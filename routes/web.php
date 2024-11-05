@@ -24,7 +24,7 @@ Route::get('/dashboard', function () {
 
 Route::resource('events', EventController::class);
 
-Route::resource('Reserve', ReserveController::class);
+Route::resource('reserves', ReserveController::class);
 
 
 Route::resource('statuses', StatusController::class);

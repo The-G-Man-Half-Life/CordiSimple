@@ -13,11 +13,13 @@ class ReserveController extends Controller
 {
     public function index()
     {
-        $reserve = reserve::all();
-        return Inertia::render('Reserve/Index',[
-            'reserve' => ReserveResource::collection($reserve),
+        $reserves = Reserve::all();  
+        return Inertia::render('Reserve/Index', [
+            'reserves' => ReserveResource::collection($reserves), 
         ]);
     }
+
+
 
 
     /**

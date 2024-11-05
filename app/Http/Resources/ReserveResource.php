@@ -16,11 +16,11 @@ class ReserveResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'created_at' => $this->created_at,
-            'modified_at' => $this->modified_at,
-            'event_id' => $this->event_id,
-            'status_id' => $this->status_id,
-            'user_id' => $this->user_id,
+            'createdAt' => $this->createdAt,
+            'modifiedAt' => $this->modifiedAt,
+            'event_Id' => $this->event_Id,
+            'status_Id' => $this->status_Id,
+            'user_Id' => $this->user_Id,
         ];
     }
 }
