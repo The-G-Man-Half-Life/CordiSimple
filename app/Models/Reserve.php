@@ -16,7 +16,7 @@ class Reserve extends Model
         "ModifiedAt",
         "Status_Id",
         "Event_Id",
-        //"User_Id",
+        "User_Id",
     ];
 
     public function status(){
@@ -27,9 +27,9 @@ class Reserve extends Model
         return $this->belongsTo(Event::class);
     }
 
-    // public function user(){ 
-    //     return $this->belongsTo(User::class);
-    // }
+    public function user(){ 
+        return $this->belongsTo(User::class);
+    }
     protected $dates = [
         'date'
     ];
