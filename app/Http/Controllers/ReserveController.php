@@ -25,8 +25,7 @@ class ReserveController extends Controller
      */
     public function create()
     {
-        return Inertia::render('Reserves/Create'); 
-    }
+        return Inertia::render('Reserves/Create'); }
 
     /**
      * Store a newly created resource in storage.
