@@ -42,7 +42,7 @@ class ReserveSeeder extends Seeder
             [
                 'createdAt' => Carbon::now()->subMonth(),
                 'modifiedAt' => Carbon::now()->subDays(3),
-                'status_id' => null,
+                'status_id' => 1,
                 'event_id' => 5,
                 'user_id' => 5,
             ],
