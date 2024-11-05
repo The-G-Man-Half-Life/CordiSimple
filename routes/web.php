@@ -22,7 +22,7 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::resource('Events', EventController::class);
+Route::resource('events', EventController::class);
 
 Route::resource('Reserve', ReserveController::class);
 
