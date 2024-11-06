@@ -13,8 +13,8 @@ export default
           {/*event.description*/} Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde odio cum ducimus, numquam iure cumque consequatur vitae quas suscipit praesentium eaque sit maiores quaerat aperiam placeat? Culpa dicta eligendi repudiandae?
         </p>
       </h5>
-      <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-        {/*event.date*/}
+      <p className="mb-3 font-normal text-end text-title dark:text-gray-400">
+        {/*event.date*/} Date
       </p>
       {/*<Link
         href={route('events.show', event.id)}>
@@ -23,7 +23,7 @@ export default
           href={route('events.show', event.id)}
           >View Details</button>
       </Link>*/}
-      <div className=" flex justify-center mt-8">
+      <div className=" flex justify-center mt-4">
         <button
           type="button"
           className="bg-secondary hover:scale-110 transition duration-300 ease-in-out text-white font-bold py-2 px-4 rounded hover:animate-vibrate duration-500"
