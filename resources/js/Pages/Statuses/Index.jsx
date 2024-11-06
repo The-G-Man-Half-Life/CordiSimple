@@ -3,14 +3,14 @@ import { Link } from '@inertiajs/react'
 import { ArrowLeft } from 'lucide-react'
 import Header from '@/Layouts/Header'
 import Footer from '@/Layouts/Footer'
-
+import EventCard from '@/Components/User/Dashboard/EventCard'
 export default function Index({ statuses }) {
     const statusList = statuses.data
 
     return (
         <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
             <Header />
-            <div className="py-12 mt-16"> 
+            <div className="py-12 mt-16">
                 <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
                     <div className="overflow-hidden bg-white shadow-sm sm:rounded-lg">
                         <div className="p-6 text-gray-900 ">
@@ -51,7 +51,13 @@ export default function Index({ statuses }) {
                             </div>
                         </div>
                     </div>
+                    <div className="w-full max-w-4xl mt-8" >
+
+<EventCard />
+
+</div>
                 </div>
+
             </div>
             <Footer />
         </div>

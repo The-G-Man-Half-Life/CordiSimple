@@ -20,7 +20,7 @@ export default {
             },
             colors: {
                 primary: {
-                    DEFAULT: '#F77E8C',
+                    DEFAULT: '#FDE2E5',
                     dark: '#242038',
                 },
                 secondary: {
@@ -28,10 +28,27 @@ export default {
                     dark: '#1A1728',
                 },
                 title: {
-                    DEFAULT: '#FBFFFE',
+                    DEFAULT: '#E56B79',
                     dark: '#3E8989',
                 },
+                text: {
+                  DEFAULT: '#F77E8C',
+                  dark: '#3E8989',
+              },
             },
+            animation: {
+              vibrate: 'vibrate 0.7s infinite',
+            },
+            keyframes: {
+              vibrate: {
+                '0%': { transform: 'rotate(0deg)' },
+                '25%': { transform: 'rotate(5deg)' },
+                '50%': { transform: 'rotate(-5deg)' },
+                '75%': { transform: 'rotate(2.5deg)' },
+                '100%': { transform: 'rotate(0deg)'
+              },
+            },
+          },
         },
     },
     plugins: [forms],
