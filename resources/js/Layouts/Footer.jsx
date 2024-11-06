@@ -4,9 +4,9 @@ import { Facebook, Twitter, Instagram, Mail } from 'lucide-react';
 
 export default function Footer() {
     return (
-        <footer className="bg-secondary dark:bg-secondary-dark">
+        <footer className="bg-primary dark:bg-secondary-dark">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div className="flex justify-center gap-8">
                     <div className="col-span-1 md:col-span-2">
                         <h2 className="text-2xl font-bold mb-4 text-title dark:text-title-dark">Cordisimple</h2>
                         <p className="text-title/80 dark:text-title-dark/80">

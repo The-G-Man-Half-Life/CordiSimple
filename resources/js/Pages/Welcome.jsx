@@ -20,11 +20,29 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                 <div>
                     <img src="/images/CordiSimpleLogo.jpg" className='w-32' alt="CordiSimpleImage" />
                 </div>
-                <nav className="-mx-3 flex flex-1 justify-end">
+                <nav className=" flex flex-1 justify-between">
+                    <div className='flex gap-x-8'>
+                    <Link
+                            className='ms-5 text-secondary font-black text-xl'
+                        >
+                            Home
+                    </Link>
+                    <Link
+                            className='text-secondary font-black text-xl'
+                        >
+                            History
+                    </Link>
+                    <Link
+                            className='text-secondary font-black text-xl'
+                        >
+                            Contact us
+                    </Link>
+                    </div>
+                    <div>
                     {auth.user ? (
                         <Link
                             href={route('dashboard')}
-                            className="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+                            className='rounded-md px-3 py-2 bg-secondary me-2 text-primary font-black text-lg'
                         >
                             Dashboard
                         </Link>
@@ -32,18 +50,19 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                         <>
                             <Link
                                 href={route('login')}
-                                className='rounded-md px-3 py-2 bg-secondary '
+                                className='rounded-md px-3 py-2 bg-secondary me-2 text-primary font-black text-lg'
                             >
                                 Log in
                             </Link>
                             <Link
                                 href={route('register')}
-                                className="rounded-md px-3 py-2 "
+                                className="rounded-md px-3 py-2 bg-secondary text-primary font-black text-lg me-5"
                             >
                                 Register
                             </Link>
                         </>
                     )}
+                    </div>
                 </nav>
             </header>
 
@@ -332,12 +351,6 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                     </div>
                 </div>
             </main>
-
-            <footer className="py-16 text-center text-sm text-black dark:text-white/70">
-                Laravel v{laravelVersion} (PHP v{phpVersion})
-            </footer>
-
-
             <Footer />
 
         </>
