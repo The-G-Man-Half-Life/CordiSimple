@@ -5,26 +5,28 @@ import { Calendar, User, Menu } from 'lucide-react'
 export default function Header() {
     return (
         <header className="bg-primary dark:bg-primary-dark shadow-md">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between items-center py-4">
-                    <div className="flex items-center">
-                        <Link href="/" className="flex items-center">
-                            <Calendar className="h-8 w-8 mr-2 text-title" />
-                            <span className="text-2xl font-bold text-title">Cordisimple</span>
-                        </Link>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+                <div className="flex justify-between">
+
+                    <div>
+                        <div className="flex items-center">
+                            <Link href="/" className="flex items-center">
+                                <img src="/images/CordiSimpleLogo.jpg" alt="CordiSimpple logo" className='w-20' />
+                            </Link>
+                        </div>
+
+
+                        <nav className="flex justify-start space-x-8">
+                            <Link href={route('dashboard')}
+                                active={route().current('dashboard')} className="text-white hover:text-rose-200 transition-colors">
+                                Dashboard
+                            </Link>
+                            <Link href={route('statuses.index')}
+                                active={route().current('statuses.index')} className="text-white hover:text-rose-200 transition-colors">
+                                Statuses
+                            </Link>
+                        </nav>
                     </div>
-
-                    <nav className="hidden md:flex space-x-8">
-                        <Link href={route('dashboard')}
-                            active={route().current('dashboard')} className="text-white hover:text-rose-200 transition-colors">
-                            Dashboard
-                        </Link>
-                        <Link href={route('statuses.index')}
-                            active={route().current('statuses.index')} className="text-white hover:text-rose-200 transition-colors">
-                            Statuses
-                        </Link>
-
-                    </nav>
                     <div className="flex items-center">
                         <Link
                             href="/login"
