@@ -5,6 +5,7 @@ import Header from '@/Layouts/Header'
 import Footer from '@/Layouts/Footer'
 import EventCard from '@/Components/User/Dashboard/EventCard'
 import DetailedCard from '@/Components/User/Dashboard/DetailedCard'
+import EventReserve from '@/Components/User/Reserves/EventReserve'
 
 export default function Index({ statuses }) {
   const statusList = statuses.data
@@ -53,14 +54,15 @@ export default function Index({ statuses }) {
               </div>
             </div>
           </div>
-          {/*  testing section
+          {/*   testing section*/}
 
-          <div className="w-full max-w-4xl mt-8" >
-            <EventCard />
-            <DetailedCard />
+          <div className="w-full  mt-8" >
+            {/* <EventCard />
+            <DetailedCard />*/}
+            <EventReserve />
           </div>
 
-          */}
+          
           </div>
         </div>
         <Footer />
