@@ -6,31 +6,30 @@ use Illuminate\Database\Eloquent\Model;
 
 class Reserve extends Model
 {
-    protected $table = 'Reserve';
+    protected $table = 'reserves';
     protected $primaryKey = 'id';
     public $timestamps = true;
-    // protected $guarded = [];
 
     protected $fillable = [
-        'CreateAt',
-        "ModifiedAt",
-        "Status_Id",
-        "Event_Id",
-        //"User_Id",
+        'created_at',
+        'modified_at',
+        'status_id', 
+        'event_id', 
+        'user_id',
     ];
 
-    public function status(){
+    public function status()
+    {
         return $this->belongsTo(Status::class);
     }
 
-    public function event(){
+    public function event()
+    {
         return $this->belongsTo(Event::class);
     }
 
-    // public function user(){ 
-    //     return $this->belongsTo(User::class);
-    // }
-    protected $dates = [
-        'date'
-    ];
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

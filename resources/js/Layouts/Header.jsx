@@ -23,6 +23,10 @@ export default function Header() {
                             active={route().current('statuses.index')} className="text-white hover:text-rose-200 transition-colors">
                             Statuses
                         </Link>
+                        <Link href={route('reserves.index')}
+                            active={route().current('reserves.index')} className="text-white hover:text-rose-200 transition-colors">
+                            reserves
+                        </Link>
 
                     </nav>
                     <div className="flex items-center">
