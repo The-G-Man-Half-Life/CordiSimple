@@ -21,24 +21,24 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
 
                 <Head title="Welcome" />
                 <WelcomeHeader />
-                <main className="h-full overflow-x-hidden overflow-y-auto px-4 md:px-6">
-
+                <main className="h-full overflow-x-hidden overflow-y-auto md:px-6">
                     {/* Hero Section */}
-                    <section className="w-90% h-[60vh] gap-8 bg-primary dark:bg-primary-dark mt-12 border-2 border-[#E56B79] flex flex-row justify-around">
-                        <div className=' px-8 w-1/2 flex flex-col justify-center space-y-8'>
+                    
+                    <section className="w-full min-h-[60vh] gap-8 bg-primary dark:bg-primary-dark mt-12 border border-secondary flex flex-col md:flex-row justify-around">
+                        <div className='md:px-8 w-full md:w-1/2 flex flex-col justify-center space-y-8'>
                             <div className="space-y-6">
-                                <h1 className="text-4xl font-bold tracking-tighter text-[#E56B79] sm:text-5xl xl:text-6xl">
+                                <h1 className="text-4xl font-bold tracking-tighter text-secondary sm:text-5xl xl:text-6xl">
                                     What do we do?
                                 </h1>
-                                <p className="text-xl text-[#242038] md:text-2xl">
+                                <p className="text-xl text-secondary md:text-2xl">
                                     We are CordiSimple an event management company.
                                 </p>
                             </div>
                             <div className="space-y-4">
-                                <h2 className="text-2xl font-semibold text-[#E56B79]">
+                                <h2 className="text-2xl font-semibold text-title">
                                     we provide these services
                                 </h2>
-                                <ul className="space-y-2 text-[#242038]">
+                                <ul className="space-y-2 text-dark">
                                     <li className="flex items-center">
                                         • Personalized planning of events.
                                     </li>
@@ -57,7 +57,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                                 </ul>
                             </div>
                         </div>
-                        <div className='relative w-1/2  flex justify-center items-center'>
+                        <div className='relative w-full md:w-1/2 h-[300px] md:h-auto flex justify-center items-center mt-8 md:mt-0'>
                             <div className='absolute w-1/2 h-full' style={{
                                 clipPath: 'polygon(50% 100%, 0 0, 100% 0)',
                                 backgroundImage: 'url(https://th.bing.com/th/id/OIP.GxyrAd7LveRRAAD9-3XNxAHaE8?rs=1&pid=ImgDetMain?height=800&width=600)',
@@ -94,16 +94,16 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                     </section>
 
                     {/* Services Section */}
-                    <section className="w-[90%] h-[90vh] dark:bg-primary-dark mt-12 flex flex-col mx-auto">
-                        <div className="w-full h-1/2  flex flex-col md:flex-row">
-                            <div className="w-full md:w-1/2  flex flex-col justify-center items-center p-4 ">
-                                <h2 className="text-2xl md:text-3xl font-bold tracking-tighter text-[#E56B79] sm:text-4xl text-center leading-tight">
+                    <section className="w-full py-12 dark:bg-primary-dark mt-12 flex flex-col mx-auto">
+                        <div className="w-full flex flex-col md:flex-row mb-12">
+                            <div className="w-full md:w-1/2 flex flex-col justify-center items-center p-4 mb-8 md:mb-0">
+                                <h2 className="text-2xl md:text-3xl font-bold tracking-tighter text-text sm:text-4xl text-center leading-tight">
                                     Take care of enjoying <br /> with the ones you <br /> love the most
                                 </h2>
                             </div>
-                            <div className="w-full md:w-1/2  flex p-4 ">
+                            <div className="w-full md:w-1/2 flex p-4">
                                 <div className="relative w-full h-full max-w-md">
-                                    <div className="absolute inset-0 translate-x-4 translate-y-4 bg-[#E56B79] rounded-xl z-0"></div>
+                                    <div className="absolute inset-0 translate-x-4 translate-y-4 bg-secondary rounded-xl z-0"></div>
                                     <img
                                         alt="People enjoying event"
                                         className="aspect-video w-full h-full rounded-xl object-cover shadow-lg relative z-10"
@@ -112,10 +112,11 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                                 </div>
                             </div>
                         </div>
-                        <div className="w-full h-1/2  flex flex-col md:flex-row">
-                            <div className="w-full md:w-1/2  flex justify-center p-4 ">
+                        <div className="w-full flex flex-col md:flex-row">
+                            <div className="w-full md:w-1/2 flex justify-center p-4 mb-8 md:mb-0 order-2 md:order-1">
+
                                 <div className="relative w-full h-full max-w-md">
-                                    <div className="absolute inset-0 translate-x-4 translate-y-4 bg-[#E56B79] rounded-xl z-0"></div>
+                                    <div className="absolute inset-0 translate-x-4 translate-y-4 bg-secondary rounded-xl z-0"></div>
                                     <img
                                         alt="Event planning"
                                         className="aspect-video w-full h-full rounded-xl object-cover shadow-lg relative z-10"
@@ -123,47 +124,46 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                                     />
                                 </div>
                             </div>
-                            <div className="w-full md:w-1/2  flex flex-col justify-center items-center p-4">
-                                <h2 className="text-2xl md:text-3xl font-bold tracking-tighter text-[#E56B79] sm:text-4xl text-center leading-tight">
+                            <div className="w-full md:w-1/2 flex flex-col justify-center items-center p-4 order-1 md:order-2">
+                                <h2 className="text-2xl md:text-3xl font-bold tracking-tighter text-text sm:text-4xl text-center leading-tight">
                                     while we worry about the <br /> management and control <br /> behind it
                                 </h2>
                             </div>
                         </div>
                     </section>
 
-
-
                     {/* Story Section */}
-                    <section className="w-full mt-12 py-12 md:py-24 bg-[rgba(247,126,140,0.5)]">
-                        <div className="container px-4 md:px-6">
-                            <div className="grid gap-6 lg:grid-cols-[2fr_1fr] lg:gap-12">
-                                <div className="flex flex-col justify-center space-y-4">
-                                    <div className="space-y-2">
-                                        <h2 className="text-3xl font-bold tracking-tighter text-[#E56B79] sm:text-4xl">Our story</h2>
-                                        <p className="text-[#F77E8C] md:text-xl">
-                                            CordiSimple was founded out of a passion for creating unforgettable experiences. Starting as a Vancouver's
-                                            small event planning business, we quickly gained a loyal following.
+                    <section className="w-full mt-12 py-12 md:py-24 bg-primary">
+                        <div className="container px-4 md:px-6 mx-auto">
+                            <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tighter text-text mb-8">
+                                Our story
+                            </h2>
+                            <div className="flex flex-col lg:flex-row items-start gap-8">
+                                <div className="bg-secondary p-8 rounded-2xl flex-grow w-full lg:max-w-[65%]">
+                                    <div className="space-y-4 text-white">
+                                        <p>
+                                            CordiSimple was founded out of a passion for creating unforgettable experiences. Starting with community
+                                            gatherings, our dedicated team quickly gained a loyal following.
                                         </p>
-                                        <p className="text-[#F77E8C] md:text-xl">
-                                            As demand grew, we expanded into corporate events, weddings, and festivals without losing sight of our
-                                            personal-first service. Our innovative approach helped establish CordiSimple as a leader in the event
-                                            planning industry. Now recognized for our dedication to detail and commitment to making every occasion
-                                            special, we continue to serve the greater Vancouver area.
+                                        <p>
+                                            As demand grew, we expanded into corporate events, weddings, and festivals, always focusing on
+                                            personalized service. Our innovative approach blends creativity with efficient logistics, ensuring seamless
+                                            execution. Today, CordiSimple is known for its attention to detail and commitment to making every occasion
+                                            special. We believe every event, big or small, deserves a touch of magic!
                                         </p>
                                     </div>
                                 </div>
-                                <div className="flex items-center justify-center">
+                                <div className="relative flex-shrink-0 w-full lg:w-[35%] h-[200px] lg:h-[300px] overflow-hidden mt-8 lg:mt-0">
                                     <img
+                                        src="/images/CordiSimpleLogo.jpg"
                                         alt="CordiSimple Logo"
-                                        className="aspect-square overflow-hidden rounded-xl object-contain"
-                                        height="300"
-                                        src="https://th.bing.com/th/id/OIP.GxyrAd7LveRRAAD9-3XNxAHaE8?rs=1&pid=ImgDetMain"
-                                        width="300"
+                                        className="absolute right-0 bottom-0 w-full h-full object-contain object-right-bottom opacity-90"
                                     />
                                 </div>
                             </div>
                         </div>
                     </section>
+
                 </main>
 
                 <Footer />
