@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Reserve;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
@@ -10,7 +11,7 @@ class ReserveSeeder extends Seeder
 {
     public function run()
     {
-        DB::table('reserves')->insert([
+$reserves=[
             [
                 'createdAt' => Carbon::now(),
                 'modifiedAt' => Carbon::now(),
@@ -46,6 +47,9 @@ class ReserveSeeder extends Seeder
                 'event_id' => 5,
                 'user_id' => 5,
             ],
-        ]);
+        ];
+        foreach ($reserves as $reserve) {
+            Reserve::create($reserve);
+        }
     }
 }

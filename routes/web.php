@@ -26,7 +26,6 @@ Route::resource('events', EventController::class);
 
 Route::resource('reserves', ReserveController::class);
 
-
 Route::resource('statuses', StatusController::class);
 
 Route::middleware('auth')->group(function () {
