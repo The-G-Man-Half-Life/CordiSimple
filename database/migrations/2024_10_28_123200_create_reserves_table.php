@@ -17,7 +17,7 @@ return new class extends Migration
             $table -> dateTime("modifiedAt");
             $table ->unsignedBigInteger("event_Id")->nullable();
             $table ->unsignedBigInteger("status_Id")->nullable();
-            $table ->unsignedBigInteger("user_Id");
+            $table->unsignedBigInteger('user_Id')->nullable();
             $table->timestamps();
 
             $table->foreign('event_Id')
