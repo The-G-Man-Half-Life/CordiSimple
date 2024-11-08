@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('ubication');
             $table->integer('capacity');
             $table->unsignedBigInteger('status_id')->nullable();
-            // $table->unsignedBigInteger('user_id')->nullable();
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->timestamps();
 
             $table->foreign('status_id')
@@ -28,11 +28,11 @@ return new class extends Migration
                 ->onDelete('set null')
                 ->onUpdate('cascade');
 
-            // $table->foreign('user_id')
-            //     ->references('id')
-            //     ->on('users')
-            //     ->onDelete('set null')
-            //     ->onUpdate('cascade');
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('set null')
+                ->onUpdate('cascade');
         });
     }
 
