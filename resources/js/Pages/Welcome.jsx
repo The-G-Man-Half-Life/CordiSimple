@@ -21,8 +21,8 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
 
                 <Head title="Welcome" />
                 <WelcomeHeader />
+                <main className="h-full overflow-x-hidden overflow-y-auto px-4 md:px-6">
 
-                <main className="flex-1 overflow-x-hidden overflow-y-auto px-4 md:px-6">
                     {/* Hero Section */}
                     <section className="w-90% h-[60vh] gap-8 bg-primary dark:bg-primary-dark mt-12 border-2 border-[#E56B79] flex flex-row justify-around">
                         <div className=' px-8 w-1/2 flex flex-col justify-center space-y-8'>
@@ -91,50 +91,50 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                             }}>
                             </div>
                         </div>
-
-
-
-
                     </section>
 
                     {/* Services Section */}
-                    <section className="w-full py-12 md:py-24">
-                        <div className="container px-4 md:px-6">
-                            <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
-                                <div className="flex flex-col justify-center space-y-4">
-                                    <div className="space-y-2">
-                                        <h2 className="text-3xl font-bold tracking-tighter text-[#E56B79] sm:text-4xl">
-                                            Take care of enjoying with the ones you love the most
-                                        </h2>
-                                        <img
-                                            alt="People enjoying event"
-                                            className="aspect-video overflow-hidden rounded-xl object-cover"
-                                            height="300"
-                                            src="https://th.bing.com/th/id/OIP.GxyrAd7LveRRAAD9-3XNxAHaE8?rs=1&pid=ImgDetMain"
-                                            width="400"
-                                        />
-                                    </div>
+                    <section className="w-[90%] h-[90vh] dark:bg-primary-dark mt-12 flex flex-col mx-auto">
+                        <div className="w-full h-1/2  flex flex-col md:flex-row">
+                            <div className="w-full md:w-1/2  flex flex-col justify-center items-center p-4 ">
+                                <h2 className="text-2xl md:text-3xl font-bold tracking-tighter text-[#E56B79] sm:text-4xl text-center leading-tight">
+                                    Take care of enjoying <br /> with the ones you <br /> love the most
+                                </h2>
+                            </div>
+                            <div className="w-full md:w-1/2  flex p-4 ">
+                                <div className="relative w-full h-full max-w-md">
+                                    <div className="absolute inset-0 translate-x-4 translate-y-4 bg-[#E56B79] rounded-xl z-0"></div>
+                                    <img
+                                        alt="People enjoying event"
+                                        className="aspect-video w-full h-full rounded-xl object-cover shadow-lg relative z-10"
+                                        src="https://th.bing.com/th/id/OIP.GxyrAd7LveRRAAD9-3XNxAHaE8?rs=1&pid=ImgDetMain"
+                                    />
                                 </div>
-                                <div className="flex flex-col justify-center space-y-4">
-                                    <div className="space-y-2">
-                                        <h2 className="text-3xl font-bold tracking-tighter text-[#E56B79] sm:text-4xl">
-                                            while we worry about the management and control behind it
-                                        </h2>
-                                        <img
-                                            alt="Event planning"
-                                            className="aspect-video overflow-hidden rounded-xl object-cover"
-                                            height="300"
-                                            src="https://th.bing.com/th/id/OIP.GxyrAd7LveRRAAD9-3XNxAHaE8?rs=1&pid=ImgDetMain"
-                                            width="400"
-                                        />
-                                    </div>
+                            </div>
+                        </div>
+                        <div className="w-full h-1/2  flex flex-col md:flex-row">
+                            <div className="w-full md:w-1/2  flex justify-center p-4 ">
+                                <div className="relative w-full h-full max-w-md">
+                                    <div className="absolute inset-0 translate-x-4 translate-y-4 bg-[#E56B79] rounded-xl z-0"></div>
+                                    <img
+                                        alt="Event planning"
+                                        className="aspect-video w-full h-full rounded-xl object-cover shadow-lg relative z-10"
+                                        src="https://th.bing.com/th/id/OIP.GxyrAd7LveRRAAD9-3XNxAHaE8?rs=1&pid=ImgDetMain"
+                                    />
                                 </div>
+                            </div>
+                            <div className="w-full md:w-1/2  flex flex-col justify-center items-center p-4">
+                                <h2 className="text-2xl md:text-3xl font-bold tracking-tighter text-[#E56B79] sm:text-4xl text-center leading-tight">
+                                    while we worry about the <br /> management and control <br /> behind it
+                                </h2>
                             </div>
                         </div>
                     </section>
 
+
+
                     {/* Story Section */}
-                    <section className="w-full py-12 md:py-24 bg-[rgba(247,126,140,0.5)]">
+                    <section className="w-full mt-12 py-12 md:py-24 bg-[rgba(247,126,140,0.5)]">
                         <div className="container px-4 md:px-6">
                             <div className="grid gap-6 lg:grid-cols-[2fr_1fr] lg:gap-12">
                                 <div className="flex flex-col justify-center space-y-4">
