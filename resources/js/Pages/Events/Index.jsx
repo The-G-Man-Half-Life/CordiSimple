@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from '@inertiajs/react';
+import Header from '@/Layouts/Header';
+import Footer from '@/Layouts/Footer';
 
 const Index = ({ events }) => {
     const eventsList = events.data;
@@ -18,6 +20,8 @@ const Index = ({ events }) => {
     };
 
     return (
+        <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
+            <Header />
         <section className="flex justify-center items-center pt-8">
             <article className="w-full max-w-4xl">
                 <h1 className="text-3xl font-bold mb-4 text-center">Event List</h1>
@@ -59,6 +63,8 @@ const Index = ({ events }) => {
                 </div>
             </article>
         </section>
+        <Footer/>
+        </div>
     );
 };
 

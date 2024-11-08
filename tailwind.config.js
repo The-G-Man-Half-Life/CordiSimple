@@ -27,6 +27,10 @@ export default {
                     DEFAULT: '#E56B79',
                     dark: '#1A1728',
                 },
+                third: {
+                  DEFAULT: 'rgba(247, 126, 140, 0.5)',
+                  dark: 'rgba(247, 126, 140, 0.5)',
+              },
                 title: {
                     DEFAULT: '#E56B79',
                     dark: '#3E8989',
