@@ -1,8 +1,23 @@
 import React from 'react';
+import { Link } from '@inertiajs/react';
+
 
 const Index = ({ reserves }) => {
   console.log(reserves.data);
   const reserveList = reserves.data;
+
+  const handleDelete = async (id) => {
+    if (confirm("Are you sure you want to delete this event?")) {
+        await fetch(`/reserves/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'X-CSRF-TOKEN': document.head.querySelector('meta[name="csrf-token"]').content,
+                'Accept': 'application/json',
+            },
+        });
+        // window.location.href = route('reserves.index');
+    }
+};
 
   return (
     <section className="flex justify-center items-center pt-8">

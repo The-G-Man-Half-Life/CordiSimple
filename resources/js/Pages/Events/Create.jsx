@@ -17,7 +17,7 @@ const Create = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit =async (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         await Inertia.post('/events', formData);
         alert("created sucesfully")
@@ -37,7 +37,7 @@ const Create = () => {
                     <input type="number" name="status_id" placeholder="Status ID" onChange={handleChange} className="border p-2 mb-2" />
                     <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white p-2 rounded">Create</button>
                     <Link href={route('events.index')} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 ml-2 rounded ">
-                            Cancel
+                        Cancel
                     </Link>
                 </form>
             </article>
