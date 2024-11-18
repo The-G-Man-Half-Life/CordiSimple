@@ -1,6 +1,6 @@
 import React from 'react';
 import { Head, Link, useForm } from '@inertiajs/react';
-import { User, Mail, Lock, Calendar } from 'lucide-react';
+import { User, Users,Mail, Lock, Calendar } from 'lucide-react';
 import InputError from '@/Components/InputError';
 import PrimaryButton from '@/Components/PrimaryButton';
 import GuestLayout from '@/Layouts/GuestLayout';
@@ -46,6 +46,7 @@ export default function Register() {
                                 className="w-full px-4 py-2 border border-secondary rounded-md focus:ring-2 focus:ring-title focus:border-title dark:bg-secondary-dark dark:border-secondary-dark dark:text-white dark:focus:ring-title-dark dark:focus:border-title-dark"
                                 required
                             />
+                          <User className="absolute right-3 top-2.5 h-5 w-5 text-secondary dark:text-secondary-dark" />
                         </div>
                         <InputError message={errors.name} className="mt-2" />
                     </div>
@@ -63,6 +64,7 @@ export default function Register() {
                                 className="w-full px-4 py-2 border border-secondary rounded-md focus:ring-2 focus:ring-title focus:border-title dark:bg-secondary-dark dark:border-secondary-dark dark:text-white dark:focus:ring-title-dark dark:focus:border-title-dark"
                                 required
                             />
+                          <Users className="absolute right-3 top-2.5 h-5 w-5 text-secondary dark:text-secondary-dark" />
                         </div>
                         <InputError message={errors.last_name} className="mt-2" />
                     </div>
