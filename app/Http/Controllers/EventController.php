@@ -21,7 +21,7 @@ class EventController extends Controller
 
     public function create()
     {
-        return Inertia::render('Events/Create'); // Asegúrate de tener la vista "Create"
+        return Inertia::render('Events/Create');
     }
 
     public function store(Request $request)
