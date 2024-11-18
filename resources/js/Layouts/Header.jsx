@@ -1,8 +1,10 @@
 import React from 'react'
-import { Link } from '@inertiajs/react'
+import { Link, usePage } from '@inertiajs/react'
 import { User} from 'lucide-react'
 
 export default function Header() {
+  const user = usePage().props.auth.user;
+
     return (
         <header className="bg-primary dark:bg-primary-dark shadow-md">
             <div className="px-4 ">
@@ -15,13 +17,13 @@ export default function Header() {
                         </div>
 
                         <nav className="flex items-center h-full">
-                            <Link 
+                            <Link
                                 href={route('events.index')}
                                 active={route().current('events.index')}
                                 className={`text-secondary ${route().current('events.index') ? 'bg-third text-secondary' : 'hover:bg-third'} transition-colors h-full flex items-center px-5`}>
                                     Events
                             </Link>
-                            <Link 
+                            <Link
                                 href={route('statuses.index')}
                                 active={route().current('')}
                                 className={`text-secondary ${route().current('statuses.index') ? 'bg-third text-secondary' : 'hover:bg-third'} transition-colors h-full flex items-center px-2`}>
@@ -35,7 +37,7 @@ export default function Header() {
                             href="/login"
                             className="text-title hover:text-secondary dark:text-title-dark dark:hover:text-secondary-dark transition-colors mr-4 flex gap-2"
                         >
-                            <p>Username</p>
+                            <p>{user.name}</p>
                             <User className="h-6 w-6" />
                         </Link>
                     </div>
