@@ -15,12 +15,13 @@ class EventController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        $events = Event::all();
-        return Inertia::render('Events/Index', [
-            'events' => EventResource::collection($events),
-        ]);
-    }
+{
+    $events = Event::all();
+    return Inertia::render('Dashboard', [
+        'events' => EventResource::collection($events),
+    ]);
+}
+
 
     /**
      * Show the form for creating a new resource.
@@ -70,12 +71,12 @@ class EventController extends Controller
     public function edit(Event $event)
     {
         $event->date = Carbon::parse($event->date)->format('Y-m-d');
-    
+
         return Inertia::render('Events/Edit', [
             'event' => new EventResource($event),
         ]);
     }
-    
+
 
     /**
      * Update the specified resource in storage.
@@ -96,7 +97,7 @@ class EventController extends Controller
         }
 
         $event->update($request->all());
-        return redirect()->route('events.Index')->with('success', 'Event updated successfully.');    
+        return redirect()->route('events.Index')->with('success', 'Event updated successfully.');
     }
 
     /**

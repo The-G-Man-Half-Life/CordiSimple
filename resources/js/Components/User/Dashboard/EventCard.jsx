@@ -1,37 +1,36 @@
-export default
-  function EventCard({ event }) {
+import React from 'react';
+import { Link } from '@inertiajs/react';
+
+export default function EventCard({ event }) {
   return (
-    <div
-      className="w-1/2 rounded-lg border border-gray-200 bg-primary p-6 shadow dark:border-gray-700 dark:bg-gray-800"
-    >
-      <h3 className="mb-2 text-2xl font-bold tracking-tight text-title text-center text-gray-900 dark:text-white">
-        {/*event.name*/} Name of the event
+    <div className="bg-primary rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
+      <h3 className="text-3xl font-semibold text-text mb-4">
+        {event.name}
       </h3>
-      <h5 className="mb-3 font-bold text-secondary dark:text-gray-400">
-        Description
-        <p className="mb-3 mt-2 font-normal text-black dark:text-gray-400">
-          {/*event.description*/} Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde odio cum ducimus, numquam iure cumque consequatur vitae quas suscipit praesentium eaque sit maiores quaerat aperiam placeat? Culpa dicta eligendi repudiandae?
+      <div className="mb-6">
+        <h5 className="text-text/80 mb-2">
+          Description
+        </h5>
+        <p className="text-primary-dark text-lg line-clamp-4">
+          {event.description}
         </p>
-      </h5>
-      <p className="mb-3 font-normal text-end text-title dark:text-gray-400">
-        {/*event.date*/} Date
-      </p>
-      {/*<Link
-        href={route('events.show', event.id)}>
-        <button
-          type="button"
+      </div>
+      <div className="mb-6">
+        <h5 className="text-text/80 mb-2">
+          Date
+        </h5>
+        <p className="text-primary-dark text-md">
+          {event.date}
+        </p>
+      </div>
+      <div className="flex justify-center">
+        <Link
           href={route('events.show', event.id)}
-          >View Details</button>
-      </Link>*/}
-      <div className=" flex justify-center mt-4">
-        <button
-          type="button"
-          className="bg-secondary hover:scale-110 transition duration-300 ease-in-out text-white font-bold py-2 px-4 rounded hover:animate-vibrate duration-500"
+          className="bg-text hover:bg-text/90 text-white px-6 py-2 rounded-md text-xl font-medium transition-all duration-300 hover:scale-105"
         >
-          View Details
-        </button>
+          Read more
+        </Link>
       </div>
     </div>
   );
 }
-

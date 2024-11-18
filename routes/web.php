@@ -26,6 +26,8 @@ Route::resource('events', EventController::class);
 
 Route::resource('reserves', ReserveController::class);
 
+Route::resource('events', EventController::class);
+Route::get('/dashboard', [EventController::class, 'index'])->name('dashboard');
 
 Route::resource('statuses', StatusController::class);
 
