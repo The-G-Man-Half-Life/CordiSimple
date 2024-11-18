@@ -17,20 +17,20 @@ class Event extends Model
         'ubication',
         'capacity',
         'status_id',
-        // 'user_id'
+        'user_id'
     ];
 
     public function status()
     {
         return $this->belongsTo(Status::class);
     }
-    // public function user()
-    // {
-    //     return $this->belongsTo(User::class);
-    // }
-    // protected $hidden = [
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+    protected $hidden = [
 
-    // ];
+    ];
     protected $dates = [
         'date'
     ];
