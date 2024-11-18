@@ -5,7 +5,7 @@ const Index = ({ reserves }) => {
     const reserveList = reserves.data;
 
     return (
-<div></div>
+<div>hola</div>
     );
 };
 

@@ -13,15 +13,17 @@ class ReserveController extends Controller
 {
     public function index()
     {
-        $reserves = Reserve::all();  
-        return Inertia::render('Reserve/Index', [
-            'reserves' => ReserveResource::collection($reserves), 
+
+        $reserves = Reserve::with(['event', 'status', 'user'])->paginate(10);
+
+        return Inertia::render('Reserves/Index', [
+            'reserves' => $reserves,
         ]);
     }
 
     public function create()
     {
-        return Inertia::render('Reserve/Create'); 
+        return Inertia::render('Reserves/Create'); 
     }
 
     public function store(Request $request)
@@ -44,8 +46,8 @@ class ReserveController extends Controller
 
     public function show(Reserve $reserve)
     {
-        return Inertia::render('Reserve/Show', [
-            'reserve' => new ReserveResource($reserve),
+        return Inertia::render('Reserves/Show', [
+            'reserves' => new ReserveResource($reserve),
         ]);
     }
 
@@ -53,7 +55,7 @@ class ReserveController extends Controller
     {
         $reserve->date = Carbon::parse($reserve->date)->format('Y-m-d');
 
-        return Inertia::render('Reserve/Edit', [
+        return Inertia::render('Reserves/Edit', [
             'reserve' => new ReserveResource($reserve),
         ]);
     }

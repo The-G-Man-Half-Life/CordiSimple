@@ -23,34 +23,11 @@ const Edit = ({ reserve }) => {
                 <h1 className="text-2xl font-bold mb-4 text-center">Edit reserve</h1>
                 <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                     <div className="mb-4">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">Name</label>
-                        <input
-                            type="text"
-                            name="name"
-                            value={formData.name}
-                            onChange={handleChange}
-                            className="border border-gray-300 rounded w-full py-2 px-3"
-                            required
-                        />
-                    </div>
-
-                    <div className="mb-4">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="description">Description</label>
-                        <textarea
-                            name="description"
-                            value={formData.description}
-                            onChange={handleChange}
-                            className="border border-gray-300 rounded w-full py-2 px-3"
-                            required
-                        />
-                    </div>
-
-                    <div className="mb-4">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="date">Date</label>
+                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="createdAt">Created at</label>
                         <input
                             type="date"
-                            name="date"
-                            value={formData.date} // Usa el valor directamente, ya está en formato correcto
+                            name="createdAt"
+                            value={formData.createdAt}
                             onChange={handleChange}
                             className="border border-gray-300 rounded w-full py-2 px-3"
                             required
@@ -58,11 +35,11 @@ const Edit = ({ reserve }) => {
                     </div>
 
                     <div className="mb-4">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="ubication">Ubication</label>
+                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="modiedAt">modifiedAt</label>
                         <input
-                            type="text"
-                            name="ubication"
-                            value={formData.ubication}
+                            type="date"
+                            name="modifiedAt"
+                            value={formData.modifiedAt} // Usa el valor directamente, ya está en formato correcto
                             onChange={handleChange}
                             className="border border-gray-300 rounded w-full py-2 px-3"
                             required
@@ -70,10 +47,22 @@ const Edit = ({ reserve }) => {
                     </div>
 
                     <div className="mb-4">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="capacity">Capacity</label>
+                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="event_Id">Event ID</label>
                         <input
                             type="number"
-                            name="capacity"
+                            name="event_Id"
+                            value={formData.event_Id}
+                            onChange={handleChange}
+                            className="border border-gray-300 rounded w-full py-2 px-3"
+                            required
+                        />
+                    </div>
+
+                    <div className="mb-4">
+                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="status_Id">Status ID</label>
+                        <input
+                            type="number"
+                            name="status_Id"
                             value={formData.capacity}
                             onChange={handleChange}
                             className="border border-gray-300 rounded w-full py-2 px-3"
@@ -82,10 +71,10 @@ const Edit = ({ reserve }) => {
                     </div>
 
                     <div className="mb-4">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="status_id">Status ID</label>
+                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="user_id">User ID</label>
                         <input
                             type="number"
-                            name="status_id"
+                            name="user_id"
                             value={formData.status_id}
                             onChange={handleChange}
                             className="border border-gray-300 rounded w-full py-2 px-3"
