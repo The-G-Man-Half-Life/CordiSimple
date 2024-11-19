@@ -47,7 +47,7 @@ class ReserveController extends Controller
     public function show(Reserve $reserve)
     {
         return Inertia::render('Reserves/Show', [
-            'reserves' => new ReserveResource($reserve),
+            'reserve' => new ReserveResource($reserve),
         ]);
     }
 

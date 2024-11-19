@@ -39,7 +39,7 @@ class EventController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-        $event = Event::create($request->all());
+        Event::create($request->all());
         return redirect()->route('events.index')->with('success', 'Event created successfully.');
     }
 

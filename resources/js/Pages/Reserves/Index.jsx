@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from '@inertiajs/react';
+import Header from '@/Layouts/Header';
+import Footer from '@/Layouts/Footer';
 
 
 const Index = ({ reserves }) => {
@@ -15,11 +17,13 @@ const Index = ({ reserves }) => {
                 'Accept': 'application/json',
             },
         });
-        // window.location.href = route('reserves.index');
+        window.location.href = route('reserves.index');
     }
 };
 
   return (
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
+     <Header/>
     <section className="flex justify-center items-center pt-8">
       <article className="text-center">
         <h1 className="text-2xl font-bold mb-4">Reserve List</h1>
@@ -89,7 +93,9 @@ const Index = ({ reserves }) => {
           </table>
         </div>
       </article>
-    </section>
+    </section> 
+    <Footer/>
+    </div>
   );
 };
 
