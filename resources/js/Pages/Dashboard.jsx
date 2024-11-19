@@ -27,7 +27,7 @@ export default function Dashboard({ events }) {
         />
         <div className="absolute inset-0 bg-primary-dark/20"></div>
       </div>
-      <div className="flex flex-col items-center justify-center p-8 text-center md:w-1/3">
+      <div className="flex flex-col items-center  justify-center p-8 text-center md:w-1/3 md: mb-2">
         <h2 className="text-2xl md:text-3xl font-bold mb-6">
           Would you like to promote your events?
         </h2>
@@ -80,7 +80,6 @@ export default function Dashboard({ events }) {
         <div id="contact-us" className="bg-secondary/10 py-12 mt-12 px-4 sm:px-6 lg:px-8">
           <ContacUs />
         </div>
-
       </main>
       <Footer />
     </div>

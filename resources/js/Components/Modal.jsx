@@ -16,7 +16,7 @@ export default function Modal({
         if (closeable) {
             onClose();
         }
-    };
+    };  
 
     const maxWidthClass = {
         sm: 'sm:max-w-sm',
