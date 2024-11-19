@@ -24,7 +24,7 @@ export default function ContactUs() {
   return (
     <div className="bg-primary/10 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold text-center text-text mb-8">Contact Us</h2>
+        <h2 className="text-5xl font-bold text-center text-text mb-8">Contact Us</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <form onSubmit={handleSubmit} className="space-y-6">
