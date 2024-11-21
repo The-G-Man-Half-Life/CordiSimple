@@ -28,28 +28,34 @@ class ReserveController extends Controller
 
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'createdAt' => 'required|date',
-            'modifiedAt' => 'required|date',
+        $validator = Validator::make($request->only(['user_Id', 'event_Id', 'status_Id']), [
             'user_Id' => 'required|integer',
             'event_Id' => 'required|integer',
-            'status_id' => 'nullable|exists:statuses,id',
+            'status_Id' => 'required|exists:statuses,id',
         ]);
-
+    
         if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator)->withInput();
+            return Inertia::render('Reserves/Create', [
+                'errors' => $validator->errors(),
+            ]);
         }
-
-        $reserve = Reserve::create($request->all());
+    
+        Reserve::create($request->only(['user_Id', 'event_Id', 'status_Id']));
+    
         return redirect()->route('reserves.index')->with('success', 'Reserve created successfully.');
     }
+    
+    
 
-    public function show(Reserve $reserve)
+
+    public function show($id)
     {
+        $reserve = Reserve::where('id', $id)->first();
         return Inertia::render('Reserves/Show', [
-            'reserve' => new ReserveResource($reserve),
+            'reserve' => $reserve,
         ]);
     }
+    
 
     public function edit(Reserve $reserve)
     {

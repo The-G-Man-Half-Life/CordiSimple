@@ -14,7 +14,7 @@ class UserSeeder extends Seeder
         User::create([
             'name' => 'John',
             'last_name' => 'Doe',
-            'email' => 'john@example.com',
+            'email' => 'john1@example.com',
             'password' => Hash::make('password123'), // Encriptar la contraseña
             'birthdate' => Carbon::create('1990', '01', '01'),
             'is_admin' => true,
@@ -23,7 +23,7 @@ class UserSeeder extends Seeder
         User::create([
             'name' => 'Jane',
             'last_name' => 'Smith',
-            'email' => 'jane@example.com',
+            'email' => 'jane1@example.com',
             'password' => Hash::make('password123'),
             'birthdate' => Carbon::create('1992', '05', '15'),
             'is_admin' => false,

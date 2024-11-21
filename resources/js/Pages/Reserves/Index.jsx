@@ -27,6 +27,7 @@ const Index = ({ reserves }) => {
     <section className="flex justify-center items-center pt-8">
       <article className="text-center">
         <h1 className="text-2xl font-bold mb-4">Reserve List</h1>
+        <Link href='/reserves/create' >Create a new reserve</Link>
         <div className="overflow-x-auto">
           <table className="min-w-full bg-white border border-gray-200 rounded-lg shadow-md">
             <thead className="bg-gray-200">
