@@ -23,7 +23,7 @@ class ReserveController extends Controller
 
     public function create()
     {
-        return Inertia::render('Reserves/Create'); 
+        return Inertia::render('Reserves/Create');
     }
 
     public function store(Request $request)
@@ -33,19 +33,18 @@ class ReserveController extends Controller
             'event_Id' => 'required|integer',
             'status_Id' => 'required|exists:statuses,id',
         ]);
-    
+
         if ($validator->fails()) {
-            return Inertia::render('Reserves/Create', [
-                'errors' => $validator->errors(),
-            ]);
+            return response()->json(['errors' => $validator->errors()], 422);
         }
-    
-        Reserve::create($request->only(['user_Id', 'event_Id', 'status_Id']));
-    
-        return redirect()->route('reserves.index')->with('success', 'Reserve created successfully.');
+
+        Reserve::create($request->only(['user_Id', 'event_Id', 'status_Id', 'createdAt', 'modifiedAt']));
+
+        return response()->json(['message' => 'Reserve created successfully'], 201);
     }
-    
-    
+
+
+
 
 
     public function show($id)
@@ -55,7 +54,7 @@ class ReserveController extends Controller
             'reserve' => $reserve,
         ]);
     }
-    
+
 
     public function edit(Reserve $reserve)
     {
@@ -66,27 +65,31 @@ class ReserveController extends Controller
         ]);
     }
 
-    public function update(Request $request, Reserve $reserve)
+        public function update(Request $request, Reserve $reserve)
     {
         $validator = Validator::make($request->all(), [
             'createdAt' => 'required|date',
             'modifiedAt' => 'required|date',
             'user_Id' => 'required|integer',
             'event_Id' => 'required|integer',
-            'status_id' => 'nullable|exists:statuses,id',
+            'status_Id' => 'required|exists:statuses,id',
         ]);
 
         if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator)->withInput();
+            return response()->json(['errors' => $validator->errors()], 422);
         }
 
         $reserve->update($request->all());
-        return redirect()->route('reserves.Index')->with('success', 'Reserve updated successfully.');
+        return redirect()->route('reserves.index')->with('success', 'Reserve updated successfully.');
     }
 
-    public function destroy(Reserve $reserve)
+    public function destroy($id)
     {
+        $reserve = Reserve::findOrFail($id);
         $reserve->delete();
-        return redirect()->route('reserves.index')->with('success', 'Reserve deleted successfully.');
+
+        return response()->json(['message' => 'Reserve deleted successfully'], 200);
     }
+
+
 }

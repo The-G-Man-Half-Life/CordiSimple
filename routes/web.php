@@ -26,6 +26,7 @@ Route::resource('events', EventController::class);
 
 Route::resource('reserves', ReserveController::class);
 
+Route::delete('/reserves/{id}', [ReserveController::class, 'destroy'])->name('reserves.destroy');
 
 
 Route::resource('statuses', StatusController::class);

@@ -11,10 +11,13 @@ class Reserve extends Model
     public $timestamps = true;
 
     protected $fillable = [
-        'status_Id', 
-        'event_Id', 
+        'status_Id',
+        'event_Id',
         'user_Id',
+        'createdAt',
+        'modifiedAt',
     ];
+
 
     public function status()
     {
